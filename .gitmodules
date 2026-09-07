@@ -1,7 +1,3 @@
-[submodule "operating_system-solaris"]
-	path = operating_system-solaris
-	url = ../operating_system-solaris
-	branch = main
 [submodule "operating_system-posix"]
 	path = operating_system-posix
 	url = ../operating_system-posix
