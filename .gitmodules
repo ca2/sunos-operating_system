@@ -6,3 +6,7 @@
 	path = operating_system-posix
 	url = ../operating_system-posix
 	branch = main
+[submodule "operating_system-sunos"]
+	path = operating_system-sunos
+	url = ../operating_system-sunos
+	branch = main
