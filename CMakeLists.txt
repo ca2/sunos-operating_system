@@ -1,0 +1,35 @@
+cmake_minimum_required(VERSION 3.17)
+project(operating_system)
+
+
+
+
+if(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
+add_subdirectory(operating_system-windows_common/acme_windows_common)
+add_subdirectory(operating_system-windows/acme_windows)
+add_subdirectory(operating_system-windows/acme_windowing_win32)
+add_subdirectory(operating_system-windows/nano_graphics_gdi)
+add_subdirectory(operating_system-windows/gdiplus_library)
+add_subdirectory(operating_system-windows/nano_graphics_gdiplus)
+add_subdirectory(operating_system-windows_common/nano_compress_windows)
+add_subdirectory(operating_system-windows_common/nano_idn_windows_common)
+add_subdirectory(operating_system-windows/nano_http_wininet)
+add_subdirectory(operating_system-windows_common/apex_windows_common)
+add_subdirectory(operating_system-windows/apex_windows)
+add_subdirectory(operating_system-windows/innate_ui_win32)
+add_subdirectory(operating_system-windows_common/aura_windows_common)
+add_subdirectory(operating_system-windows/aura_windows)
+add_subdirectory(operating_system-windows/node_windows)
+add_subdirectory(operating_system-windows/windowing_win32)
+add_subdirectory(operating_system-windows/operating_ambient_windows)
+add_subdirectory(operating_system-windows/write_text_win32)
+add_subdirectory(operating_system-windows/draw2d_gdiplus)
+add_subdirectory(operating_system-windows/multimedia_mmsystem)
+add_subdirectory(operating_system-windows/audio_mmsystem)
+add_subdirectory(operating_system-windows/input_win32)
+
+
+add_subdirectory(operating_system-windows_common/imaging_wic)
+
+endif()
+
