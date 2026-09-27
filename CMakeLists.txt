@@ -2,8 +2,9 @@ cmake_minimum_required(VERSION 3.17)
 project(operating_system)
 
 
-
 if(${CMAKE_SYSTEM_NAME} STREQUAL "SunOS")
+
+
 add_subdirectory(operating_system-posix/acme_posix)
 add_subdirectory(operating_system-sunos/acme_sunos)
 #add_subdirectory(operating_system-sunos/acme_windowing_win32)
@@ -12,7 +13,7 @@ add_subdirectory(operating_system-sunos/acme_sunos)
 #add_subdirectory(operating_system-windows/nano_graphics_gdiplus)
 #add_subdirectory(operating_system-windows_common/nano_compress_windows)
 #add_subdirectory(operating_system-windows_common/nano_idn_windows_common)
-#add_subdirectory(operating_system-windows/nano_http_wininet)
+add_subdirectory(operating_system-posix/nano_http_command_line)
 add_subdirectory(operating_system-posix/apex_posix)
 add_subdirectory(operating_system-sunos/apex_sunos)
 #add_subdirectory(operating_system-windows/innate_ui_win32)
