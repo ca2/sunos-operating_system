@@ -32,6 +32,9 @@ add_subdirectory(operating_system-sunos/operating_ambient_gtk3)
 
 #add_subdirectory(operating_system-windows_common/imaging_wic)
 
+include(operating_system-posix/_desktop_ambient_5.cmake)
+
+
 elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
 add_subdirectory(operating_system-windows_common/acme_windows_common)
 add_subdirectory(operating_system-windows/acme_windows)
