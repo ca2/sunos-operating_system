@@ -34,6 +34,10 @@ add_subdirectory(operating_system-sunos/apex_sunos)
 
 include(operating_system-posix/_desktop_ambient_5.cmake)
 
+if(DESKTOP_AMBIENT)
+   add_subdirectory(operating_system-posix/write_text_pango)
+endif()
+
 
 elseif(${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
 add_subdirectory(operating_system-windows_common/acme_windows_common)
