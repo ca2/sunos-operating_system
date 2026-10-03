@@ -17,6 +17,14 @@ add_subdirectory(operating_system-posix/nano_compress_command_line)
 add_subdirectory(operating_system-posix/nano_http_command_line)
 add_subdirectory(operating_system-posix/apex_posix)
 add_subdirectory(operating_system-sunos/apex_sunos)
+
+if(INCLUDE_AUDIO)
+   add_subdirectory(operating_system-posix/audio_sunaudio)
+   add_subdirectory(operating_system-posix/audio_oss)
+   # Audio backends are loaded dynamically, so ensure application audio builds
+   # also produce both modules. Link dependencies point from the backends to
+   # audio; ordering dependencies must go on applications to avoid a cycle.
+endif()
 #add_subdirectory(operating_system-windows/innate_ui_win32)
 #add_subdirectory(operating_system-posix/aura_posix)
 #add_subdirectory(operating_system-sunos/aura_sunos)
