@@ -47,6 +47,9 @@ endif()
 #add_subdirectory(operating_system-windows_common/imaging_wic)
 
 include(operating_system-posix/_desktop_ambient_5.cmake)
+if(DESKTOP_AMBIENT)
+   add_subdirectory(operating_system-posix/input_xinput)
+endif()
 
 if(DESKTOP_AMBIENT)
    add_subdirectory(operating_system-posix/write_text_pango)
