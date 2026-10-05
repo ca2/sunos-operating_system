@@ -18,6 +18,12 @@ add_subdirectory(operating_system-posix/nano_http_command_line)
 add_subdirectory(operating_system-posix/apex_posix)
 add_subdirectory(operating_system-sunos/apex_sunos)
 
+option(INCLUDE_ACCESSIBILITY_ATSPI "Build AT-SPI accessibility automation" ON)
+if(INCLUDE_ACCESSIBILITY_ATSPI)
+   add_subdirectory(operating_system-posix/accessibility_atspi)
+   add_subdirectory(operating_system-posix/accessibility_gtk3)
+endif()
+
 if(INCLUDE_AUDIO)
    add_subdirectory(operating_system-posix/audio_sunaudio)
    add_subdirectory(operating_system-posix/audio_oss)
