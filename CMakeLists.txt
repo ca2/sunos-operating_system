@@ -21,8 +21,14 @@ add_subdirectory(operating_system-sunos/apex_sunos)
 #add_subdirectory(operating_system-sunos/aura_sunos)
 #add_subdirectory(operating_system-sunos/node_sunos)
 
-option(INCLUDE_ACCESSIBILITY_ATSPI "Build AT-SPI accessibility automation" ON)
-if(INCLUDE_ACCESSIBILITY_ATSPI)
+# AT-SPI is a desktop integration feature. Console-only builds must not
+# configure GTK/AT-SPI targets, even if a previous CMake cache enabled it.
+set(_CA2_ACCESSIBILITY_DEFAULT OFF)
+if(DESKTOP_AMBIENT)
+   set(_CA2_ACCESSIBILITY_DEFAULT ON)
+endif()
+option(INCLUDE_ACCESSIBILITY_ATSPI "Build AT-SPI accessibility automation" ${_CA2_ACCESSIBILITY_DEFAULT})
+if(DESKTOP_AMBIENT AND INCLUDE_ACCESSIBILITY_ATSPI)
    add_subdirectory(operating_system-posix/accessibility_atspi)
    add_subdirectory(operating_system-posix/accessibility_gtk3)
 endif()
